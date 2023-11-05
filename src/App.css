@@ -1,38 +1,154 @@
-.App {
+#root, html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+div {
+  padding: 10px;
+}
+   
+.app {
+  height: 100vh;
+  background: linear-gradient(to right, rgb(54, 35, 139), rgb(90, 41, 175));
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bookmark-btn {
+  position:absolute;
+  top:10px;
+  right: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+   
+.card {
+  background: rgb(208, 82, 82);
+  width: 50%;
+  height: 40%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 2%;
+  box-shadow: black 8px 8px 8px;
+  margin: 30px;
+}
+
+.card:hover {
+  animation:0.7s ease-in-out both;
+  transform: scale(1.1);
+}
+   
+.heading {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-family: 'Spartan', sans-serif;
+}
+   
+.button {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  align-items: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 1;
+  background-color: rgb(0, 156, 81);
+  border: 1px solid rgb(0, 156, 81);
+}
+   
+.button span {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 50px;
+  letter-spacing: 0.7px;
+}
+   
+.button:hover {
+  animation: rotate 0.7s ease-in-out both;
+  background: rgb(14, 117, 64);
+}
+   
+.button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+  background: rgb(14, 117, 64);
+}
+
+.bookmarks {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+   
+@keyframes rotate {
+  0% {
+  transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+  transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+  transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+  transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+  transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+   
+@keyframes storm {
+  0% {
+  transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+  transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+  transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+  transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+  transform: translate3d(0, 0, 0) translateZ(0);
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 1007px) {
+  .card {
+      width: 60%;
+      height: 30%;
   }
-  to {
-    transform: rotate(360deg);
+}
+   
+@media only screen and (max-width: 600px) {
+  .card {
+      width: 88%;
+      height: 40%;
+  }
+}
+
+@media only screen and (max-width: 1407px) {
+  .button {
+      width: 100%;
+      height: 90%;
+  }
+}
+   
+@media only screen and (max-width: 600px) {
+  .button {
+      width: 100%;
+      height: 90%;
   }
 }
